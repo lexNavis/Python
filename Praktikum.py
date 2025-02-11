@@ -3,6 +3,7 @@ class Employee:
     
     def __generate_employee_id(first_name, second_name, gender):
         return hash(first_name + second_name + gender)
+
     def __init__(self, first_name, second_name, gender):
         self.first_name = first_name
         self.second_name = second_name
@@ -20,7 +21,7 @@ class Employee:
 class FullTimeEmployee(Employee):
     
     def __init__(self, first_name, second_name, gender, salary):
-        super().__init__(first_name, second_name, gender)
+        super().__init__(first_name = first_name, second_name = second_name, gender = gender)
         self.__salary = salary
 
     def get_unpaid_vacation(self, start_date, days):
@@ -30,6 +31,7 @@ class FullTimeEmployee(Employee):
         holiday_money = self.__salary * 0.8
         return holiday_money
     
+
 class PartTimeEmployee(Employee):
     vacation_days = 14
 
